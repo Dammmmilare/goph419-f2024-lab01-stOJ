@@ -1,2 +1,5 @@
-# goph419-f2024-lab01-stOJ
-Lab 001
+# GOPH 419 – Computational Methods for Geophysicists
+
+*Semester:* F2024
+*Instructor:* B. Karchewski
+*Author:* Oyedemi Joshua Oyedemi
