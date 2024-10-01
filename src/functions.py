@@ -75,13 +75,13 @@ def launch_angle_range(ve_v0, alpha, tol_alpha):
 
  """
 
-alpha_low = alpha * (1 - tol_alpha)
-alpha_upper = alpha * (1 + tol_alpha)
+alpha_low = alpha * (1 - tol_alpha) # type: ignore
+alpha_upper = alpha * (1 + tol_alpha) # type: ignore
     
-phi_low = launch_angle(ve_v0, alpha_low)
-phi_upper = launch_angle(ve_v0, alpha_upper)
+phi_low = launch_angle(ve_v0, alpha_low) # type: ignore
+phi_upper = launch_angle(ve_v0, alpha_upper) # type: ignore
 
-phi_range : (phi_low, phi_upper)
-#return phi_range
+phi_range : (phi_low, phi_upper) # type: ignore
+return phi_range  # type: ignore
 
  
