@@ -15,3 +15,10 @@ import numpy as np
  #print(f'multiply(A, B):\n{multiply(A, B)}')
 #if __name__ == '__main__':
  #main()
+
+import numpy as np
+
+def question 2(): test for # type: ignore
+
+
+if __name__ == '__main__': # type: ignore
