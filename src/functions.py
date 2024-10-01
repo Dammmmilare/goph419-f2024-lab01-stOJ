@@ -1,39 +1,4 @@
-import numpy as np
-
-def launch_angle_range(ve_v0, alpha, tol_alpha):
- 
-
-
- """
- 
- Description of function.
- Computing the range of launch angles for the values of ve_vo, alpha, and tol_alpha.
-
- Parameters
- ----------
- ve_vo : float
-    Ratio of escape velovity to the terminal velocity.
-
- alpha : float
-    the desires maximum altitude with respect to the fraction of the earths radius.
-
- tol_alpha : float
-    The tolerance for maximum altitude.
-
-
- Returns
- -------
-
- numpy.array 
-
-    A two-component array containing the minimum and maximum desirable launch angles.
-
- """
-
-
-
- ### ...
- ### implementation of Equations (17) and (18)
+###
 
 import numpy as np
 
@@ -65,10 +30,58 @@ def asin(x):
     return result
 
 
+##
 
- # ...
+##
+
+def launch_angle(ve_v0, alpha):
+    """Compute the launch angle based on ve/v0 and alpha."""
+    term = (ve_v0**2 - 1) * alpha
+    if term < 0:
+        raise ValueError("Invalid input: term under square root is negative.")
+    return asin(np.sqrt(term))
 
 
- #return phi_range : (phi_low, phi_upper)
+###
+
+
+###
+def launch_angle_range(ve_v0, alpha, tol_alpha):
+ 
+
+ """
+ 
+ Description of function.
+ Computing the range of launch angles for the values of ve_vo, alpha, and tol_alpha.
+
+ Parameters
+ ----------
+ ve_vo : float
+    Ratio of escape velovity to the terminal velocity.
+
+ alpha : float
+    the desires maximum altitude with respect to the fraction of the earths radius.
+
+ tol_alpha : float
+    The tolerance for maximum altitude.
+
+
+ Returns
+ -------
+
+ numpy.array 
+
+    A two-component array containing the minimum and maximum desirable launch angles.
+
+ """
+
+alpha_low = alpha * (1 - tol_alpha)
+alpha_upper = alpha * (1 + tol_alpha)
+    
+phi_low = launch_angle(ve_v0, alpha_low)
+phi_upper = launch_angle(ve_v0, alpha_upper)
+
+phi_range : (phi_low, phi_upper)
+#return phi_range
 
  
