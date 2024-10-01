@@ -84,4 +84,3 @@ phi_upper = launch_angle(ve_v0, alpha_upper) # type: ignore
 phi_range : (phi_low, phi_upper) # type: ignore
 return phi_range  # type: ignore
 
- 
