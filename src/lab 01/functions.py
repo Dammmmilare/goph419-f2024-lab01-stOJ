@@ -1,6 +1,4 @@
-###
-
-import numpy as np
+import numpy as np # type: ignore
 
 def asin(x):
 

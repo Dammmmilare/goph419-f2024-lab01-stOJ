@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np 
 #{from my_python_package.operators import (
 # add,
  #multiply,
@@ -18,7 +18,7 @@ import numpy as np
 
 import numpy as np
 
-def question 2(): test for # type: ignore
+def question 2(): test for # type:  ignore
 
 
 if __name__ == '__main__': # type: ignore
