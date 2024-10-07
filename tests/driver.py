@@ -1,10 +1,4 @@
-import sys
-import os
 import numpy as np
-
-# Add the parent directory to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) 
-
 from src.lab01.functions import launch_angle_range
 
 def test_launch_angle_range():
@@ -22,6 +16,8 @@ def test_launch_angle_range():
 
 if __name__ == "__main__":
     test_launch_angle_range()
+
+
 
 import numpy as np
 import matplotlib.pyplot as plt
