@@ -20,9 +20,10 @@ app such as Dropbox or OneDrive because the synchronization may interfere with t
 git clone <git@github.com>:USER/goph419-f2024-lab00-stYY.git
 where you should make sure to enter your user name instead of USER and your
 initials instead of YY.
+
 If you do not have an SSH key setup, you can use:
-git clone <https://github.com/USER/goph419-f2024-lab00-stYY.git>
-and you may need to enter your GitHub password.
+git clone <https://github.com/USER/goph419-f2024-lab00-stYY.git> and you may need to enter your GitHub password.
+
 If you installed the GitHub CLI, you can use:
 gh repo clone USER/goph419-f2024-lab-00-stYY
 4. You should now have a directory called goph419-f2024-lab00-stYY,
@@ -31,30 +32,21 @@ ls
 to list the directory contents and make sure that you see it.
 5. Move into the new directory with:
 cd goph419-f2024-lab00-stYY
-This is the directory where you will create and track your source code for the
-project.
+This is the directory where you will create and track your source code for the project.
 6. You can confirm that this directory is tracked with git in a few ways. You can enter:
 ls -Hidden # on Windows
 ls -a # on Mac/Linux
-and confirm that you see the hidden directory .git, which is where git stores
-the files needed to track your project’s current state and history. Most of the
-time you will not need to enter this directory, but its presence indicates active
-tracking by git. You can also enter some git commands and confirm thatyou get sensible output:
+and confirm that you see the hidden directory .git, which is where git stores the files needed to track your project’s current state and history.
+Most of the time you will not need to enter this directory, but its presence indicates active tracking by git.
+You can also enter some git commands and confirm thatyou get sensible output:
 git status # to see current state information
 git remote -v # to see the name and address of the remote
 git log # to page through commit history, q to exit
-With the last command, you should see at least one commit already from when
-you initialized the repository on GitHub. This is a useful command if you want
-to reset to an earlier commit, because you can see the commit messages and
-corresponding commit IDs. Now that your repository is initialized on GitHub
-and you have a local copy, you should set up a virtual environment for your
-Python code development.
-8. Later, if you make changes to the repository from a different machine (or other
-collaborators make changes), you can update your local copy to the latest
-version using:
+With the last command, you should see at least one commit already from when you initialized the repository on GitHub. This is a useful command if you want
+to reset to an earlier commit, because you can see the commit messages and corresponding commit IDs. Now that your repository is initialized on GitHub
+and you have a local copy, you should set up a virtual environment for your Python code development.
+7. Later, if you make changes to the repository from a different machine (or other
+collaborators make changes), you can update your local copy to the latest version using:
 git pull
-which "pulls" any updates by downloading them from the remote server and (if
-necessary) asking you to resolve any conflicts with your local version. [Note:
-It is a good habit and best practice to pull any updates from the remote before
-pushing any local commits because a blind push may overwrite changes made
-by collaborators.]
+which "pulls" any updates by downloading them from the remote server and (if necessary) asking you to resolve any conflicts with your local version.
+[Note: It is a good habit and best practice to pull any updates from the remote before pushing any local commits because a blind push may overwrite changes made by collaborators.]
