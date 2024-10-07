@@ -24,8 +24,8 @@ If you do not have an SSH key setup, you can use:
 git clone <https://github.com/USER/goph419-f2024-lab00-stYY.git>
 and you may need to enter your GitHub password.
 If you installed the GitHub CLI, you can use:
-gh repo clone USER/goph419-f2024-lab-00-stYY
-4. You should now have a directory called goph419-f2024-lab00-stYY,
+gh repo clone USER/goph419-f2024-lab-001-stOJ
+4. You should now have a directory called goph419-f2024-lab001-stOJ,
 which you can check by entering:
 ls
 to list the directory contents and make sure that you see it.
