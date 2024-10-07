@@ -30,7 +30,7 @@ which you can check by entering:
 ls
 to list the directory contents and make sure that you see it.
 5. Move into the new directory with:
-cd goph419-f2024-lab00-stYY
+cd goph419-f2024-lab001-stOJ
 This is the directory where you will create and track your source code for the project.
 6. You can confirm that this directory is tracked with git in a few ways. You can enter:
 ls -Hidden # on Windows
