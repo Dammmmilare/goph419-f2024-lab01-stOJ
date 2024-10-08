@@ -5,7 +5,9 @@ def asin(x):
     Compute inverse sine function
     Input:  
     x: float
-    Returns: float
+    Returns: 
+    float
+    
     """
     sign = -1 if x < 0 else 1
     x = np.abs(x)
