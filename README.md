@@ -24,14 +24,18 @@ git clone <https://github.com/USER/goph419-f2024-lab01-stOJ.git>
 and you may need to enter your GitHub password.
 If you installed the GitHub CLI, you can use:
 gh repo clone USER/goph419-f2024-lab-001-stOJ
+
 4. You should now have a directory called goph419-f2024-lab001-stOJ,
 which you can check by entering:
 ls
 to list the directory contents and make sure that you see it.
-5. Move into the new directory with:
+
+6. Move into the new directory with:
 cd goph419-f2024-lab001-stOJ
 This is the directory where you will create and track your source code for the project.
-6. You can confirm that this directory is tracked with git in a few ways. You can enter:
+
+ 
+7. You can confirm that this directory is tracked with git in a few ways. You can enter:
 ls -Hidden # on Windows
 ls -a # on Mac/Linux
 and confirm that you see the hidden directory .git, which is where git stores
@@ -47,7 +51,8 @@ to reset to an earlier commit, because you can see the commit messages and
 corresponding commit IDs. Now that your repository is initialized on GitHub
 and you have a local copy, you should set up a virtual environment for your
 Python code development.
-7. Later, if you make changes to the repository from a different machine (or other
+
+8. Later, if you make changes to the repository from a different machine (or other
 collaborators make changes), you can update your local copy to the latest
 version using:
 git pull
