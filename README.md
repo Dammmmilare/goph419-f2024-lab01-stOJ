@@ -17,11 +17,10 @@ cd $HOME\Repos\Courses\goph419 # on Windows
 cd ~/Repos/Courses/goph419 # on Mac/Linux or whichever directory you prefer. [Note: It is not recommended to store repositories tracked with git and a remote GitHub under a file synchronization
 app such as Dropbox or OneDrive because the synchronization may interfere with the operation of git and cause conflicts. Rest assured that using git with a remote server achieves the ability to backup files and work from multiple different machines that is usually the purpose of using file synchronization programs.]
 3. If you have an SSH key setup on your machine, clone your new repository with:
-git clone <git@github.com>:USER/goph419-f2024-lab00-stYY.git
-where you should make sure to enter your user name instead of USER and your
-initials instead of YY.
+git clone <git@github.com>:USER/goph419-f2024-lab01-stOJ.git
+
 If you do not have an SSH key setup, you can use:
-git clone <https://github.com/USER/goph419-f2024-lab00-stYY.git>
+git clone <https://github.com/USER/goph419-f2024-lab01-stOJ.git>
 and you may need to enter your GitHub password.
 If you installed the GitHub CLI, you can use:
 gh repo clone USER/goph419-f2024-lab-001-stOJ
