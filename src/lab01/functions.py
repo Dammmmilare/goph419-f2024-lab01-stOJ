@@ -1,5 +1,48 @@
 import numpy as np
 
+def launch_angle_range(ve_v0, alpha, tol_alpha):
+    """
+    Computes the minimum and maximum allowable launch angles based on the ratio of escape velocity
+    to terminal velocity and the desired maximum altitude.
+    
+    Parameters
+    ----------
+    ve_v0 : float
+        Ratio of escape velocity to terminal velocity.
+    alpha : float
+        Desired maximum altitude as a fraction of Earth's radius.
+    tol_alpha : float
+        Tolerance for the maximum altitude.
+    
+    Returns
+    -------
+    np.array
+        A two-element array containing the minimum and maximum allowable launch angles (in radians).
+    """
+    def launch_angle(ve_v0, alpha):
+        # Equation (17) implementation
+        sin_phi0 = np.sqrt(1 - (alpha / ve_v0)**2)
+        return np.arcsin(sin_phi0)
+    
+    # Lower and upper bounds for maximum altitude
+    lower_alpha = (1 - tol_alpha) * alpha
+    upper_alpha = (1 + tol_alpha) * alpha
+    
+    # Calculate minimum and maximum allowable launch angles
+    phi_min = launch_angle(ve_v0, upper_alpha)
+    phi_max = launch_angle(ve_v0, lower_alpha)
+    
+    return np.array([phi_min, phi_max])
+
+# Example usage and testing
+ve_v0 = 2.0
+alpha = 0.25
+tol_alpha = 0.02
+phi_range = launch_angle_range(ve_v0, alpha, tol_alpha)
+print("Launch angle range:", np.degrees(phi_range), "degrees")
+
+import numpy as np
+
 def asin(x):
     """
     Compute inverse sine function
@@ -24,36 +67,3 @@ def asin(x):
 
     result = sign * np.sqrt(0.5 * result)
     return result
-
-def launch_angle(ve_v0, alpha):
-    """Compute the launch angle based on ve/v0 and alpha."""
-    term = (ve_v0 ** 2 - 1) * alpha
-    if term < 0:
-        raise ValueError("Invalid input: term under square root is negative.")
-    return asin(np.sqrt(term))
-
-def launch_angle_range(ve_v0, alpha, tol_alpha):
-    """
-    Compute the range of launch angles for given ve_v0, alpha, and tol_alpha.
-
-    Parameters
-    ----------
-    ve_v0 : float
-        Ratio of escape velocity to the terminal velocity.
-    alpha : float
-        Desired maximum altitude as a fraction of the Earth's radius.
-    tol_alpha : float
-        Tolerance for maximum altitude.
-
-    Returns
-    -------
-    numpy.array
-        A two-component array containing the minimum and maximum desirable launch angles.
-    """
-    alpha_low = alpha * (1 - tol_alpha)
-    alpha_upper = alpha * (1 + tol_alpha)
-    
-    phi_low = launch_angle(ve_v0, alpha_low)
-    phi_upper = launch_angle(ve_v0, alpha_upper)
-
-    return np.array([phi_low, phi_upper])

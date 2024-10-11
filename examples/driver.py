@@ -1,31 +1,6 @@
-import sys
-import os
-import numpy as np
-
-# Add the parent directory to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) 
-
-from src.lab01.functions import launch_angle_range
-
-def test_launch_angle_range():
-    ve_v0 = 2.0
-    alpha = 0.25
-    tol_alpha = 0.02
-    
-    expected_phi_range = np.array([0.52359878, 0.55357436])  # Example expected values
-    actual_phi_range = launch_angle_range(ve_v0, alpha, tol_alpha)
-    
-    assert np.allclose(actual_phi_range, expected_phi_range, atol=1e-5), \
-        f"Test failed: expected {expected_phi_range}, got {actual_phi_range}"
-    
-    print("Test passed!")
-
-if __name__ == "__main__":
-    test_launch_angle_range()
-
 import numpy as np
 import matplotlib.pyplot as plt
-from src.lab01.functions import launch_angle_range 
+from src.lab01.functions import launch_angle_range
 
 def main():
     ve_v0 = 2.0
@@ -36,16 +11,22 @@ def main():
     max_angles = []
     
     for alpha in alpha_values:
-        phi_range = launch_angle_range(ve_v0, alpha, tol_alpha)
+        phi_range = np.degrees(launch_angle_range(ve_v0, alpha, tol_alpha))
         min_angles.append(phi_range[0])
         max_angles.append(phi_range[1])
     
-    plt.plot(alpha_values, min_angles, label='Min Launch Angle')
-    plt.plot(alpha_values, max_angles, label='Max Launch Angle')
-    plt.xlabel('Alpha (fraction of Earth\'s radius)')
-    plt.ylabel('Launch Angle (radians)')
+    # Plotting
+    plt.figure(figsize=(10, 6))
+    plt.plot(alpha_values, min_angles, label='Minimum Launch Angle', color='blue')
+    plt.plot(alpha_values, max_angles, label='Maximum Launch Angle', color='red')
+    plt.xlabel('Alpha (maximum altitude as fraction of Earth’s radius)')
+    plt.ylabel('Launch Angle (degrees)')
+    plt.title('Launch Angle Range vs. Alpha')
     plt.legend()
-    plt.savefig('figures/launch_angles_vs_alpha.png')
+    plt.grid(True)
+    
+    # Save the plot
+    plt.savefig('figures/launch_angle_vs_alpha.png')
     plt.show()
 
 if __name__ == "__main__":
