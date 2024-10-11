@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from src.lab01.functions import launch_angle_range
+from src.functions import launch_angle_range
 
 def main():
     ve_v0 = 2.0
