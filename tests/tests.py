@@ -21,8 +21,9 @@ def test_launch_angle_range():
     print("Test passed!")
 
 if __name__ == "__main__":
-    test_launch_angle_range()'''
-
+    test_launch_angle_range()
+'''
+# second alteration made with AI to try to fix errors
 '''
 import numpy as np
 from src.functions import launch_angle_range
