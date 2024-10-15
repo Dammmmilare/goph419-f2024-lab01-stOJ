@@ -1,3 +1,4 @@
+# previous versions of my program are stored in the Versions folder.
 import sys
 import os
 import numpy as np
@@ -5,6 +6,7 @@ import numpy as np
 # Add the parent directory to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) 
 
+# First for before changes were made to fix runtime errors.
 '''from src.functions import launch_angle_range
 
 def test_launch_angle_range():
@@ -23,7 +25,7 @@ def test_launch_angle_range():
 if __name__ == "__main__":
     test_launch_angle_range()
 '''
-# second alteration made with AI to try to fix errors
+# Second alteration made with AI to try to fix errors.
 '''
 import numpy as np
 from src.functions import launch_angle_range
@@ -53,6 +55,7 @@ def test_launch_angle_range():
 if __name__ == '__main__':
     test_launch_angle_range()'''
 
+# Final alterations were made using Ai (chatgpt) to make change
 import numpy as np
 from src.functions import launch_angle_range
 
